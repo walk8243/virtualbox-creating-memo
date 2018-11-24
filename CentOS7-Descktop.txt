@@ -1,0 +1,17 @@
+yum update
+yum install -y wget gcc
+
+[git]
+yum install -y \
+  curl-devel \
+  expat-devel \
+  gettext-devel \
+  openssl-devel \
+  zlib-devel \
+  perl-ExtUtils-MakeMaker
+mkdir /usr/local/src && cd $_
+wget https://github.com/git/git/archive/v2.19.2.tar.gz
+tar -xf v2.19.2.tar.gz
+cd git-2.19.2
+make prefix=/usr/local all
+make prefix=/usr/local install
